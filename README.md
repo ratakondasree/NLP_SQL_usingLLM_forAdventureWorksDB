@@ -1,2 +1,3 @@
 # NLP_SQL_usingLLM_forAdventureWorksDB
 Creating LLM Power application to generate for natural language to SQL query for AdventureworksDB
+This is Demo Project , which will take natural language query from user and LLM will generate SQL query against AdventureWorksDB in SQL Server Database and it will run the query in DB with additional feature of SQL server Row-level security and it will fetch data and give to Application .
