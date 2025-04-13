@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>First Form</title>
+</head>
+<body>
+    <h1>First Form</h1>
+    <form method="POST" action="{{ url_for('first_form') }}">
+        <label for="name">Name:</label>
+        <input 
+            type="text" 
+            id="name" 
+            name="name"
+        >
+        
+        <label for="email">Email:</label>
+        <input 
+            type="email" 
+            id="email" 
+            name="email"
+        >
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

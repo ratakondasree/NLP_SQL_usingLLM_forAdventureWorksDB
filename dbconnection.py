@@ -32,16 +32,12 @@ def create_db_connection(username,password):
     return engine 
 
 
-
-# llm = ChatOpenAI(model_name="gpt-4", temperature=0)
-
-# # ✅ Create SQLDatabaseChain
-# db_chain = SQLDatabaseChain.from_llm(llm, dbconn, verbose=True)
-
-# # Example: Convert Natural Language to SQL
-# nl_query = "how many total blue nike t-shirts are available?"
-
-# # ✅ Generate SQL Query & Execute
-# result = db_chain.invoke(nl_query)
-
-# print("Query Result:", result)
+def query_answer(username,password,query):
+    db = SQLDatabase(create_db_connection(username,password))
+    llm = ChatOpenAI(model_name="gpt-4", temperature=0)
+    # ✅ Create SQLDatabaseChain
+    db_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
+    # Example: Convert Natural Language to SQL
+    # ✅ Generate SQL Query & Execute
+    result = db_chain.invoke(query)
+    return result 
